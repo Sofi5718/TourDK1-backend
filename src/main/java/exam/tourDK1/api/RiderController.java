@@ -1,6 +1,7 @@
 package exam.tourDK1.api;
 
 
+import exam.tourDK1.dto.RiderDto;
 import exam.tourDK1.entity.Rider;
 import exam.tourDK1.service.RiderService;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class RiderController {
     }
 
     @GetMapping
-    public List<Rider> getAllRiders() {
+    public List<RiderDto> getAllRiders() {
         return riderService.getAllRiders();
     }
 
@@ -28,25 +29,18 @@ public class RiderController {
     }
 
     @GetMapping("/{id}")
-    public Rider getRiderById(@PathVariable int id) {
+    public RiderDto getRiderById(@PathVariable int id) {
         return riderService.getRiderById(id);
     }
 
     @PostMapping
-    public Rider saveRider(@RequestBody Rider rider) {
+    public Rider saveRider(@RequestBody RiderDto rider) {
         return riderService.saveRider(rider);
     }
 
     @PutMapping("/{id}")
-    public Rider updateRider(@PathVariable int id, @RequestBody Rider rider) {
-        Rider existingRider = riderService.getRiderById(id);
-        existingRider.setName(rider.getName());
-        existingRider.setTeam(rider.getTeam());
-        existingRider.setBirthDate(rider.getBirthDate());
-        existingRider.setSprintPoints(rider.getSprintPoints());
-        existingRider.setMountainPoints(rider.getMountainPoints());
-        existingRider.setTotalTime(rider.getTotalTime());
-        return riderService.saveRider(existingRider);
+    public Rider updateRider(@PathVariable int id, @RequestBody RiderDto riderDto) {
+        return riderService.updateRider(id, riderDto);
     }
 
     @DeleteMapping("/{id}")
