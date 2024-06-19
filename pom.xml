@@ -8,11 +8,11 @@
         <version>3.2.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>template</groupId>
-    <artifactId>spring-template</artifactId>
+    <groupId>exam</groupId>
+    <artifactId>tourDK1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-template</name>
-    <description>spring-template</description>
+    <name>tourDK1</name>
+    <description>tourDK1</description>
     <properties>
         <java.version>17</java.version>
     </properties>

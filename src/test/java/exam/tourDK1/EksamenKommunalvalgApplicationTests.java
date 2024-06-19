@@ -1,4 +1,4 @@
-package template.springtemplate;
+package exam.tourDK1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
